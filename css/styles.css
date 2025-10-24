@@ -1235,6 +1235,11 @@ nav.navbar.scrolled {
 .value-icon {
   font-size: 3rem;
   margin-bottom: 20px;
+  color: var(--color-accent-1);
+}
+
+.value-icon i {
+  display: block;
 }
 
 .value-title {
