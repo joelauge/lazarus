@@ -3785,13 +3785,45 @@ nav.navbar.scrolled {
 .service-image,
 .card-image,
 .industry-image,
-.method-icon img,
 .location-image {
     width: 100%;
     height: 200px;
-    object-fit: cover;
-    border-radius: 8px;
     margin-bottom: var(--space-md);
+    position: relative;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.product-image img,
+.service-image img,
+.card-image img,
+.industry-image img,
+.location-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center center;
+    border-radius: 8px;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.product-image::before,
+.service-image::before,
+.card-image::before,
+.industry-image::before,
+.location-image::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 8px;
+    z-index: 1;
+    pointer-events: none;
 }
 
 .method-icon {
