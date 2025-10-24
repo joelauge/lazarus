@@ -410,7 +410,7 @@ nav.navbar.scrolled {
   font-size: 14px;
   text-decoration: none;
   transition: all var(--transition-fast);
-  text-transform: uppercase;
+  text-transform: none;
   letter-spacing: 0.5px;
   font-family: 'Inter', sans-serif;
   border: none;
@@ -503,6 +503,7 @@ nav.navbar.scrolled {
 @media (max-width: 1024px) {
   .nav-container {
     padding: 16px 24px;
+    position: relative;
   }
   
   .nav-menu {
@@ -542,8 +543,12 @@ nav.navbar.scrolled {
   }
   
   .nav-cta {
-    margin-left: 0;
-    margin-top: 24px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    margin: 0;
+    z-index: 10;
   }
   
   .nav-toggle {
