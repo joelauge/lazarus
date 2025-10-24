@@ -3867,12 +3867,14 @@ nav.navbar.scrolled {
     }
     
     .ai-content {
-        padding: 0 var(--space-lg);
+        padding: 0 var(--space-sm);
     }
     
     .ai-video-container {
-        width: 280px;
-        height: 157px;
+        width: calc(100vw - 32px);
+        max-width: 400px;
+        height: calc((100vw - 32px) * 9 / 16);
+        max-height: 225px;
     }
     
     .ai-features {
