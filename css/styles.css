@@ -578,7 +578,7 @@ nav.navbar.scrolled {
   min-height: 80vh;
   display: flex;
   align-items: center;
-  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  background: #1a1a1a;
   padding: 120px 0;
 }
 
