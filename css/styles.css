@@ -1438,7 +1438,23 @@ nav.navbar.scrolled {
   z-index: 1;
 }
 
+.hero-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
 .hero-background video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+}
+
+.hero-video video {
   width: 100%;
   height: 100%;
   object-fit: cover;
