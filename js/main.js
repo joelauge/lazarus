@@ -13,6 +13,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initLazyLoading();
     initSmoothScrolling();
     initVideoSwitching(); // Add video switching initialization
+    initIOSVideoAutoplay(); // Handle iOS video autoplay issues
 });
 
 /* ========================================
@@ -630,4 +631,82 @@ function initVideoSwitching() {
     });
 }
 
+/* ========================================
+   iOS VIDEO AUTOPLAY HANDLING
+   ======================================== */
 
+function initIOSVideoAutoplay() {
+    // Detect iOS
+    const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+    
+    if (isIOS) {
+        console.log('iOS detected - handling video autoplay');
+        
+        // Get all background videos
+        const videos = document.querySelectorAll('video[autoplay]');
+        
+        videos.forEach(video => {
+            // Add iOS-specific attributes
+            video.setAttribute('webkit-playsinline', 'true');
+            video.setAttribute('playsinline', 'true');
+            video.muted = true;
+            
+            // Try to play the video
+            const playPromise = video.play();
+            
+            if (playPromise !== undefined) {
+                playPromise.then(() => {
+                    console.log('Video autoplay successful');
+                }).catch(error => {
+                    console.log('Video autoplay failed:', error);
+                    
+                    // Add click handler to play video on user interaction
+                    video.addEventListener('click', function() {
+                        video.play().catch(e => console.log('Manual play failed:', e));
+                    });
+                    
+                    // Add touch handler for iOS
+                    video.addEventListener('touchstart', function() {
+                        video.play().catch(e => console.log('Touch play failed:', e));
+                    });
+                    
+                    // Show play button overlay for iOS
+                    addPlayButtonOverlay(video);
+                });
+            }
+        });
+        
+        // Handle page visibility changes (iOS pauses videos when tab is hidden)
+        document.addEventListener('visibilitychange', function() {
+            if (!document.hidden) {
+                videos.forEach(video => {
+                    if (video.paused) {
+                        video.play().catch(e => console.log('Resume play failed:', e));
+                    }
+                });
+            }
+        });
+    }
+}
+
+function addPlayButtonOverlay(video) {
+    const container = video.parentElement;
+    const overlay = document.createElement('div');
+    overlay.className = 'video-play-overlay';
+    overlay.innerHTML = `
+        <div class="play-button">
+            <svg width="60" height="60" viewBox="0 0 60 60" fill="none">
+                <circle cx="30" cy="30" r="30" fill="rgba(255, 140, 0, 0.9)"/>
+                <path d="M22 18L42 30L22 42V18Z" fill="white"/>
+            </svg>
+        </div>
+    `;
+    
+    overlay.addEventListener('click', function() {
+        video.play().catch(e => console.log('Overlay play failed:', e));
+        overlay.style.display = 'none';
+    });
+    
+    container.style.position = 'relative';
+    container.appendChild(overlay);
+}
