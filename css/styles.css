@@ -4260,12 +4260,8 @@ nav.navbar.scrolled {
   .contact-title {
     font-size: 2.5rem;
     font-weight: 700;
-    color: var(--color-text-primary);
+    color: #000000; /* Black text */
     margin-bottom: 16px;
-    background: linear-gradient(135deg, var(--color-accent-1) 0%, var(--color-accent-2) 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
   }
   
   .contact-description {
@@ -4358,7 +4354,7 @@ nav.navbar.scrolled {
   }
   
   .emergency-contact {
-    background: linear-gradient(135deg, var(--color-accent-1) 0%, var(--color-accent-2) 100%);
+    background: #1a1a1a; /* Charcoal background */
     color: #ffffff;
     padding: 32px 24px;
     border-radius: 16px;
