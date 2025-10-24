@@ -5088,6 +5088,13 @@ nav.navbar.scrolled {
     
     .quality-content {
         padding: 0 var(--space-lg);
+        text-align: center; /* Center content on mobile */
+        display: block; /* Override table layout for mobile */
+    }
+    
+    .quality-left-column {
+        display: block; /* Override table-cell for mobile */
+        text-align: center; /* Center all content */
     }
     
     .ai-content {
