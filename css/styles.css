@@ -5088,13 +5088,22 @@ nav.navbar.scrolled {
     
     .quality-content {
         padding: 0 var(--space-lg);
-        text-align: center; /* Center content on mobile */
-        display: block; /* Override table layout for mobile */
+        display: flex; /* Use flexbox instead of table on mobile */
+        flex-direction: column;
+        align-items: center; /* Center everything horizontally */
+        justify-content: center; /* Center everything vertically */
+        text-align: center; /* Center text content */
+        max-width: 100%; /* Use full width */
     }
     
     .quality-left-column {
-        display: block; /* Override table-cell for mobile */
+        display: block; /* Override table-cell */
+        width: 100%; /* Use full width */
         text-align: center; /* Center all content */
+    }
+    
+    .quality-right-column {
+        display: none; /* Hide right column on mobile */
     }
     
     .ai-content {
