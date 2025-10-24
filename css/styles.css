@@ -1919,6 +1919,8 @@ nav.navbar.scrolled {
   align-items: center;
   width: 100%;
   padding: 0 var(--space-2xl);
+  max-width: none;
+  box-sizing: border-box;
 }
 
 .crisis-header {
@@ -1952,6 +1954,7 @@ nav.navbar.scrolled {
   border: 1px solid #333333;
   width: 100%;
   max-width: none;
+  box-sizing: border-box;
 }
 
 .chart-title {
@@ -3656,6 +3659,8 @@ nav.navbar.scrolled {
   position: relative;
   margin-bottom: 24px;
   width: 100%;
+  max-width: none;
+  box-sizing: border-box;
 }
 
 .line-chart {
@@ -3664,6 +3669,8 @@ nav.navbar.scrolled {
   background: #1a1a1a;
   border-radius: 8px;
   display: block;
+  max-width: none;
+  box-sizing: border-box;
 }
 
 .y-label, .x-label {
