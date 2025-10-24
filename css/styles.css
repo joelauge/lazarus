@@ -778,8 +778,8 @@ nav.navbar.scrolled {
 
 .btn-secondary {
   background: transparent;
-  color: #ffffff;
-  border: 2px solid #ffffff;
+  color: var(--color-accent-2);
+  border: 2px solid var(--color-accent-2);
   position: relative;
   overflow: hidden;
 }
@@ -3871,9 +3871,9 @@ nav.navbar.scrolled {
     }
     
     .ai-video-container {
-        width: calc(100vw - 32px);
-        max-width: 400px;
-        height: calc((100vw - 32px) * 9 / 16);
+        width: calc(100vw - 5px);
+        max-width: 450px;
+        height: calc((100vw - 16px) * 9 / 16);
         max-height: 225px;
     }
     
