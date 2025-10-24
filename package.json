@@ -1,0 +1,31 @@
+{
+  "name": "lazarus-industrial-website",
+  "version": "1.0.0",
+  "description": "Lazarus Industrial Group - Reviving Industry. Reinventing Possibility.",
+  "main": "index.html",
+  "scripts": {
+    "start": "python3 -m http.server 8000",
+    "serve": "python3 -m http.server 8000",
+    "dev": "python3 -m http.server 8000",
+    "build": "echo 'Static site - no build process needed'",
+    "test": "echo 'No tests configured'"
+  },
+  "keywords": [
+    "industrial",
+    "manufacturing",
+    "vulcanizers",
+    "automation",
+    "conveyor",
+    "equipment"
+  ],
+  "author": "Lazarus Industrial Group",
+  "license": "MIT",
+  "devDependencies": {},
+  "dependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lazarus-industrial/website"
+  },
+  "homepage": "https://lazarus-industrial.com"
+}
+
