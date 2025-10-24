@@ -621,7 +621,7 @@ nav.navbar.scrolled {
   display: flex;
   align-items: flex-start;
   min-height: 100vh;
-  padding-top: 180px;
+  padding-top: 250px;
 }
 
 .hero-text {
@@ -3805,7 +3805,7 @@ nav.navbar.scrolled {
 /* Enhanced Responsive Design */
 @media (max-width: 768px) {
     .hero-content {
-        padding-top: 140px;
+        padding-top: 200px;
         padding-left: var(--space-lg);
         padding-right: var(--space-lg);
         padding-bottom: var(--space-xl);
@@ -3924,7 +3924,7 @@ nav.navbar.scrolled {
     }
     
     .hero-content {
-        padding-top: 120px;
+        padding-top: 180px;
         padding-left: var(--space-md);
         padding-right: var(--space-md);
     }
