@@ -621,7 +621,7 @@ nav.navbar.scrolled {
   display: flex;
   align-items: flex-start;
   min-height: 100vh;
-  padding-top: 220px;
+  padding-top: 120px;
 }
 
 .hero-text {
@@ -3805,16 +3805,41 @@ nav.navbar.scrolled {
 /* Enhanced Responsive Design */
 @media (max-width: 768px) {
     .hero-content {
-        padding: 0 var(--space-lg);
+        padding-top: 100px;
+        padding-left: var(--space-lg);
+        padding-right: var(--space-lg);
+        padding-bottom: var(--space-xl);
+    }
+    
+    .hero-text {
+        padding: 0;
     }
     
     .hero-title {
         font-size: clamp(2rem, 8vw, 3rem);
+        margin-bottom: var(--space-md);
+    }
+    
+    .hero-description {
+        font-size: 16px;
+        margin-bottom: var(--space-lg);
     }
     
     .hero-stats {
         grid-template-columns: repeat(2, 1fr);
-        gap: var(--space-lg);
+        gap: var(--space-md);
+        margin-bottom: var(--space-lg);
+    }
+    
+    .hero-cta {
+        flex-direction: column;
+        gap: var(--space-md);
+        align-items: stretch;
+    }
+    
+    .btn-large {
+        width: 100%;
+        text-align: center;
     }
     
     .crisis-content {
@@ -3884,5 +3909,50 @@ nav.navbar.scrolled {
     
     .location-image {
         height: 120px;
+    }
+}
+
+/* Extra small mobile devices */
+@media (max-width: 480px) {
+    .navbar {
+        height: 60px;
+    }
+    
+    .nav-container {
+        height: 60px;
+        padding: 0 var(--space-md);
+    }
+    
+    .hero-content {
+        padding-top: 80px;
+        padding-left: var(--space-md);
+        padding-right: var(--space-md);
+    }
+    
+    .hero-title {
+        font-size: clamp(1.5rem, 6vw, 2.5rem);
+        line-height: 1.1;
+    }
+    
+    .hero-description {
+        font-size: 14px;
+    }
+    
+    .hero-stats {
+        grid-template-columns: 1fr;
+        gap: var(--space-sm);
+    }
+    
+    .stat-item {
+        justify-content: center;
+        text-align: center;
+    }
+    
+    .stat-number {
+        font-size: clamp(20px, 4vw, 28px);
+    }
+    
+    .stat-label {
+        font-size: 10px;
     }
 }
