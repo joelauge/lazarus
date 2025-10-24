@@ -2882,12 +2882,11 @@ nav.navbar.scrolled {
 }
 
 .ai-video-container {
-  width: 100%;
+  width: 90%;
   max-width: 640px;
   height: 360px; /* 16:9 aspect ratio */
   border-radius: 16px;
   overflow: hidden;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
   background: #000;
   margin: 0 auto; /* Center the video */
 }
