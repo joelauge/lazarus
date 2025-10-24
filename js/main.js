@@ -568,6 +568,12 @@ function initVideoSwitching() {
     console.log('Found main video image:', mainVideoImage);
     console.log('Found main video caption:', mainVideoCaption);
     
+    // Only initialize if we have the required elements (homepage only)
+    if (videoCards.length === 0 || !mainVideoImage || !mainVideoCaption) {
+        console.log('Video switching elements not found, skipping initialization');
+        return;
+    }
+    
     // Video data configuration
     const videoData = {
         1: {
